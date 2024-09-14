@@ -5,54 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Acid Pedia</title>
+    <link rel="icon" href="asset/icon.png" type="image/png">
+    <title>AcisPay</title>
 </head>
 <body>
 
     <nav>
         <ul class="sidebar">
-          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Apps</a></li>
+          <li onclick=hideSidebar()><a><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+          <li onclick=hideSidebar()><a href="#home">Home</a></li>
+          <li onclick=hideSidebar()><a href="#service">Service</a></li>
+          <li onclick=hideSidebar()><a href="#apps">Apps</a></li>
         </ul>
         <ul>
-          <li><a href="#"><img src="asset/unnamed.webp" alt=""></a></li>
-          <li class="hideOnMobile"><a href="#">Home</a></li>
-          <li class="hideOnMobile"><a href="#">Service</a></li>
-          <li class="hideOnMobile"><a href="#">Apps</a></li>
-          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+          <li><a href="#"><img src="asset/icon.png" alt=""></a></li>
+          <li class="hideOnMobile"><a href="#home">Home</a></li>
+          <li class="hideOnMobile"><a href="#service">Service</a></li>
+          <li class="hideOnMobile"><a href="#apps">Apps</a></li>
+          <li class="menu-button" onclick=showSidebar()><a><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         </ul>
       </nav>
 
-      <script>
-        function showSidebar(){
-          const sidebar = document.querySelector('.sidebar')
-          sidebar.style.display = 'flex'
-        }
-        function hideSidebar(){
-          const sidebar = document.querySelector('.sidebar')
-          sidebar.style.display = 'none'
-        }
-      </script>
-
-<div class="slider">
+<div class="slider" id="home">
     <div class="list">
         <div class="item">
-            <img src="asset/1.jpg" alt="">
+            <img src="asset/Acis1.png" alt="Acis.png">
         </div>
         <div class="item">
-            <img src="asset/1.jpg" alt="">
+            <img src="asset/Acis 2.png" alt="Acis.png">
         </div>
         <div class="item">
-            <img src="asset/1.jpg" alt="">
+            <img src="asset/Acis4.png" alt="Acis.png">
         </div>
         <div class="item">
-            <img src="asset/1.jpg" alt="">
+            <img src="asset/Acis 5.png" alt="Acis.png">
         </div>
         <div class="item">
-            <img src="asset/1.jpg" alt="">
+            <img src="asset/Acis 6.png" alt="Acis.png">
         </div>
     </div>
     <div class="buttons">
@@ -68,14 +58,12 @@
     </ul>
 </div>
 
-<script src="slider.js"></script>
-
 <div class="desc">
     <h1>Aplikasi PPOB & TopUp Game</h1>
-    <p>ACIS PEDIA adalah Layanan Penyedia Pembelian dan Pembayaran secara Digital.</p>
+    <p>ACISPAY adalah Layanan Penyedia Pembelian dan Pembayaran secara Digital.</p>
 </div>
 
-<div class="service">
+<div class="service" id="service">
     <h1>Service</h1>
     <p>Beberapa layanan pembelian dan Pembayaran via digital.</p>
     
@@ -84,46 +72,69 @@
 <div class="container-card">
 <div class="card">
     <div class="card-content">
-        <img src="asset/e-wallet.png" alt="">
+        <img src="asset/wallet.png" alt="">
         <p>Top-Up E-Wallet</p>
     </div>
 </div>
 <div class="card">
     <div class="card-content">
-        <img src="asset/e-wallet.png" alt="">
+        <img src="asset/game.png" alt="">
         <p>Top-Up Games</p>
     </div>
 </div>
 <div class="card">
     <div class="card-content">
-    <img src="asset/e-wallet.png" alt="">
-    <p>Top-Up Pulsa & Transfer</p>
+    <img src="asset/phone.png" alt="">
+    <p>Top-Up Pulsa & Kuota</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+    <img src="asset/listrik.png" alt="">
+    <p>Token Listrik</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-content">
+    <img src="asset/tagihan.png" alt="">
+    <p>Bayar Tagihan</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-content">
+    <img src="asset/transfer.png" alt="">
+    <p>Transfer</p>
     </div>
 </div>
 </div>
 
 
 
-<dir class="apps">
+<dir class="apps" id="apps">
     <h1>Application & CS</h1>
-    <p>Aplikasi Dan Costumer Service Acis Pedia</p>
+    <p>Aplikasi Dan Costumer Service AcisPay</p>
 </dir>
 
 <div class="cs">
-    <div class="card-cs">
-        <div class="cs-content">
-            <img src="asset/playstore.png" alt="">
-            <p>Download Acis Pedia</p>
+    <a href="https://play.google.com/store/apps/details?id=com.acispedia">
+        <div class="card-cs">
+            <div class="cs-content">
+                <img src="asset/playstore.png" alt="">
+                <p>Download AcisPay</p>
+            </div>
         </div>
-    </div>
-    <div class="card-cs">
-        <div class="cs-content">
-            <img src="asset/whatsapp.png" alt="">
-            <p>Costumer Service Acis Pedia</p>
+    </a>
+    <a href="https://whatsapp.com/channel/0029VaerPLjAlnPdoiFNco2B">
+        <div class="card-cs">
+            <div class="cs-content">
+                <img src="asset/whatsapp.png" alt="">
+                <p>Costumer Service AcisPay</p>
+            </div>
         </div>
-    </div>
+    </a>
 </div>
 
-
+<script src="slider.js"></script>
 </body>
 </html>

@@ -9,11 +9,29 @@
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
   }
-  nav{
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
     background-color: white;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   }
+
+  nav.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  nav.opacity {
+    opacity: 0;
+  }
+
   nav ul{
     width: 100%;
     list-style: none;
@@ -21,6 +39,7 @@
     justify-content: flex-end;
     align-items: center;
   }
+
   nav li{
     height: 50px;
   }
@@ -32,12 +51,38 @@
     align-items: center;
     color: black;
   }
-  nav a:hover{
-    background-color: #f0f0f0;
+
+  nav ul.showSidebar {
+    animation: showSidebar .4s ease-in-out;
   }
+
+  nav ul.hideSidebar {
+    animation: hideSidebar .4s ease-in-out;
+  }
+
+  nav ul.sidebar li:nth-child(1) a:hover {
+     background-color: #17cbb3;
+     transition: .3s ease-in-out;
+  }
+
+  nav ul li:nth-child(2) a:hover,li:nth-child(3) a:hover,li:nth-child(4) a:hover,li:nth-child(5) a:hover{
+    background-color: #17cbb3;
+    color: #ededed;
+    transition: .3s ease-in-out;
+  }
+
+  nav ul li.outHover {
+    animation: outHover .3s ease-in-out;
+  }
+
   nav li:first-child{
     margin-right: auto;
   }
+
+  nav ul li.menu-button,nav ul.sidebar li:nth-child(1) {
+    cursor: pointer;
+  }
+
 
   nav img {
     width: 50px;
@@ -68,19 +113,6 @@
   }
   .menu-button{
     display: none;
-  }
-  @media(max-width: 800px){
-    .hideOnMobile{
-      display: none;
-    }
-    .menu-button{
-      display: block;
-    }
-  }
-  @media(max-width: 400px){
-    .sidebar{
-      width: 100%;
-    }
   }
 
   .slider{
@@ -147,21 +179,18 @@
 .slider .dots li.active{
     width: 30px;
 }
-@media screen and (max-width: 768px){
-    .slider{
-        height: 400px;
-    }
-}
 
 .desc {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-top: 30px;
+    cursor: default;
 }
 
 .desc h1 {
-    font-size: 20px;
+    color: #17cbb3;
+    font-size: 1.5rem;
     font-weight: 900;
 }
 
@@ -173,9 +202,12 @@
     justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: default;
 }
 
 .service h1 {
+    color: #17cbb3;
+    font-size: 1.5rem;
     font-weight: 900;
 }
 
@@ -183,6 +215,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
     gap: 25px;
 }
 
@@ -191,6 +225,17 @@
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(.9);
+    box-shadow: none;
+}
+
+.card:hover p {
+    transition: .3s ease-in-out;
+    color: #17cbb3;
 }
 
 .card-content {
@@ -218,11 +263,16 @@
 }
 
 .apps {
+    cursor: default;
     text-align: center;
     margin-top: 200px;
 }
 
-.apps h1{font-weight: 900;}
+.apps h1 {
+    color: #17cbb3;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
 
 .cs {
     display: flex;
@@ -232,16 +282,30 @@
     margin-bottom: 100px;
 }
 
+.cs a {
+    text-decoration: none;
+}
+
+.cs a:hover .cs-content p {
+    transition: .3s ease-in-out;
+    color: #17cbb3;
+}
+
 .card-cs {
     width: 350px;
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    
+    transition: .3s ease-in-out;
+}
+
+.card-cs:active {
+    transform: scale(.9);
+     box-shadow: none;
 }
 
 .cs-content {
-    font-size: 17px;
+    font-size: 1rem;
     margin-top: 10px;
     margin-bottom: 10px;
     color: #666;
@@ -252,7 +316,6 @@
 }
 
 .cs-content p {
-    font-size: 17px;
     color: #666;
     margin-top: 10px;
     font-weight: 600;
@@ -263,3 +326,60 @@
     aspect-ratio: 4/3;
     object-fit: contain;
 }
+
+
+/*Keyframes*/
+
+@keyframes showSidebar {
+    from {
+        transform: translateX(200px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes hideSidebar {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}
+
+@keyframes outHover {
+    from {
+        background-color: #17cbb3;
+    }
+    to {
+        color: black;
+    }
+}
+
+/*Keyframes END*/
+
+/*Media Query*/
+
+@media(max-width: 800px){
+    .hideOnMobile{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+  }
+  @media(max-width: 400px){
+    .sidebar{
+      width: 100%;
+    }
+  }
+
+   @media screen and (max-width: 768px){
+    .slider{
+       height: 400px;
+    }
+  }
+/*Media Query End*/
