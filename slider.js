@@ -1,3 +1,20 @@
+// loading
+window.addEventListener("load",() => {
+    setTimeout(() => {
+        document.querySelector('.load-container').style.display = 'none';
+
+        document.querySelector('nav').style.display = 'flex';
+        document.querySelector('nav').style.opacity = '1';
+
+        document.querySelector('main').style.display = 'block';
+        document.querySelector('main').style.opacity = '1';
+
+        document.querySelector('footer').style.display = 'block';
+        document.querySelector('footer').style.opacity = '1';
+    },3000);
+})
+
+
 // WindowScroll
 window.addEventListener('scroll',() => {
     const sidebar = document.querySelector('.sidebar');
@@ -15,6 +32,7 @@ window.addEventListener('scroll',() => {
             nav.classList.remove('sticky');
         }
 });
+
 
 let slider = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
